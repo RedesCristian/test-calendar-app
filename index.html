@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar Activități Extrașcolare</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .calendar-container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .activity-list {
+        margin-top: 20px;
+      }
+      .activity-item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      .activity-item .fa {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calendar-container">
+      <h1>Calendar Activități Extrașcolare</h1>
+      <label for="activity">Activitate:</label>
+      <input type="text" id="activity" required />
+      <label for="date">Data:</label>
+      <input type="date" id="date" required />
+      <label for="time">Ora:</label>
+      <input type="time" id="time" required />
+      <label for="address">Adresa:</label>
+      <input type="text" id="address" required />
+      <button onclick="addActivity()">Adaugă Activitate</button>
+      <div class="activity-list" id="activityList"></div>
+    </div>
+
+    <script>
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register("sw.js").then(() => {
+          console.log("Service Worker registered!");
+        });
+      }
+    </script>
+    <script src="script.js"></script>
+    <script src="./sw.js"></script>
+  </body>
+</html>
